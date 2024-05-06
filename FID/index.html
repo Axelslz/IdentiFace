@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Reconocimiento de Rostros en Tiempo Real</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden; /* Prevenir el desplazamiento en dispositivos móviles */
+            background-color: #1a1a1a;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Arial', sans-serif;
+        }
+        .app-header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 15px;
+            background-color: #212121;
+            color: #fff;
+            text-align: center;
+            z-index: 1000;
+        }
+        .app-container {
+            width: 100%;
+            max-width: 480px; /* Ancho máximo para que no sea demasiado grande en dispositivos de pantalla ancha */
+            height: 100%;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+        }
+        #canvas {
+            flex-grow: 1; /* Asegúrate de que el canvas ocupa todo el espacio vertical disponible */
+            background-color: black;
+        }
+        #video {
+            display: none; /* El video está oculto, solo se usa para capturar el stream de la cámara */
+        }
+        /* Añadir estilos adicionales para controles, botones y otros elementos aquí */
+    </style>
+</head>
+<body>
+    <header class="app-header">
+        <h1>Reconocimiento Facial</h1>
+    </header>
+
+    <div class="app-container">
+        <canvas id="canvas" width="640" height="480"></canvas>
+        <video id="video" width="640" height="480" autoplay hidden></video>
+        <!-- Aquí podrías agregar botones o controles adicionales -->
+    </div>
+    
+    <script src="main.js"></script>
+</body>
+</html>
+
